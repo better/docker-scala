@@ -8,9 +8,10 @@
 # Pull base image.
 FROM phusion/baseimage
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update
-RUN apt-get install -y software-properties-common
-RUN apt-get install -y curl
+RUN apt-get install -y software-properties-common curl
 
 # Install Java.
 RUN \
@@ -27,8 +28,6 @@ WORKDIR /data
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
-
-ENV DEBIAN_FRONTEND noninteractive
 
 ### Pulled from: https://hub.docker.com/r/hseeberger/scala-sbt/~/dockerfile/
 ENV SCALA_VERSION 2.11.8
