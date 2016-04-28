@@ -8,6 +8,7 @@
 # Pull base image.
 FROM ubuntu
 
+RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y curl
 
