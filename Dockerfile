@@ -6,7 +6,7 @@
 #
 
 # Pull base image.
-FROM ubuntu:trusty
+FROM phusion/baseimage
 
 RUN apt-get update
 RUN apt-get install -y software-properties-common
