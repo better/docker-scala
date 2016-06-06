@@ -47,3 +47,13 @@ RUN \
   rm sbt-$SBT_VERSION.deb && \
   apt-get update && \
   apt-get install sbt
+
+# Create project and compile to resolve sbt and scala dependencies
+RUN mkdir -p /opt/app/src/main/scala
+WORKDIR /opt/app
+RUN \
+  echo 'package com.better\nobject A {}' > /opt/app/src/main/scala/package.scala && \
+  echo 'organization := "com.better"\nscalaVersion := "'$SCALA_VERSION'"' > /opt/app/build.sbt && \
+  sbt compile
+WORKDIR /opt
+RUN rm -r /opt/app
