@@ -6,7 +6,7 @@
 #
 
 # Pull base image.
-FROM phusion/baseimage
+FROM phusion/baseimage:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -30,8 +30,8 @@ WORKDIR /data
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 ### Pulled from: https://hub.docker.com/r/hseeberger/scala-sbt/~/dockerfile/
-ENV SCALA_VERSION 2.11.8
-ENV SBT_VERSION 0.13.11
+ENV SCALA_VERSION 2.12.2
+ENV SBT_VERSION 0.13.15
 
 # Install Scala
 ## Piping curl directly in tar
