@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java:latest
+FROM anapsix/alpine-java:8
 
 # Install sbt
 ENV SBT_VERSION 0.13.15
