@@ -2,7 +2,7 @@ FROM anapsix/alpine-java:8
 
 # Install sbt
 ENV SBT_VERSION 0.13.17
-ENV SCALA_VERSION 2.11.12
+ENV SCALA_VERSION 2.11.7
 ENV PATH $PATH:/root/sbt/bin
 RUN apk add --no-cache curl=7.61.1-r1 && \
   curl -fsL https://piccolo.link/sbt-$SBT_VERSION.tgz | gunzip -dc | tar xf - -C /root && \
