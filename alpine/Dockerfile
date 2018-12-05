@@ -1,11 +1,11 @@
 FROM anapsix/alpine-java:8
 
 # Install sbt
-ENV SBT_VERSION 0.13.15
-ENV SCALA_VERSION 2.12.2
+ENV SBT_VERSION 0.13.17
+ENV SCALA_VERSION 2.11.12
 ENV PATH $PATH:/root/sbt/bin
-RUN apk add --no-cache curl=7.61.1-r0 && \
-  curl -fsL http://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz | gunzip -dc | tar xf - -C /root && \
+RUN apk add --no-cache curl=7.61.1-r1 && \
+  curl -fsL https://piccolo.link/sbt-$SBT_VERSION.tgz | gunzip -dc | tar xf - -C /root && \
   apk del curl
 
 # Create project and compile to resolve sbt and scala dependencies
